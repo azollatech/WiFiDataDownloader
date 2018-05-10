@@ -25,6 +25,7 @@ namespace WindowsFormsApplication1
         private Dictionary<int, Dictionary<string, Tag>> tagMasterList = new Dictionary<int, Dictionary<string, Tag>>();
         private int yLocation = 156;
         private int timerCount = 1;
+        private socketServer socketServer;
 
         private string raceName;
         private int raceId;
@@ -48,8 +49,13 @@ namespace WindowsFormsApplication1
         private void startSocketServer()
         {
             Console.WriteLine("startSocketServer");
-            var socketServer = new socketServer(this);
+            socketServer = new socketServer(this);
             socketServer.Start();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
         }
 
         private void addTimerBoxGroup()

@@ -154,6 +154,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "WiFi Data Downloader";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
